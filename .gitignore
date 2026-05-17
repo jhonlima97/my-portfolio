@@ -6,9 +6,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
 .env
 .claude
 CLAUDE.md
+
+# Raw GitHub dump — input only, lists private repo names
+src/data/github-repos.json
+scripts/fetch-github.mjs
 
 node_modules
 dist

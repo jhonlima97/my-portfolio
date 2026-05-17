@@ -119,7 +119,12 @@ export default function Header() {
               right: 0,
               bottom: 0,
               zIndex: 40,
-              backgroundColor: theme === 'dark' ? '#0f0f0f' : '#fafafa',
+              backgroundColor:
+                theme === 'dark'
+                  ? 'rgba(15, 15, 15, 0.25)'
+                  : 'rgba(250, 250, 250, 0.25)',
+              backdropFilter: 'blur(5px) saturate(150%)',
+              WebkitBackdropFilter: 'blur(5px) saturate(150%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -135,11 +140,15 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   style={{
-                    fontSize: '36px',
+                    fontSize: 'clamp(28px, 8vw, 36px)',
                     fontWeight: 600,
                     color: theme === 'dark' ? '#f9fafb' : '#111827',
                     textDecoration: 'none',
                     transition: 'color 0.2s',
+                    textShadow:
+                      theme === 'dark'
+                        ? '0 1px 12px rgba(0, 0, 0, 0.6)'
+                        : '0 1px 12px rgba(255, 255, 255, 0.7)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = '#6366f1';
