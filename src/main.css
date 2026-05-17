@@ -37,12 +37,13 @@ body {
   background-color: #ffffff;
 }
 .dark .section-surface-1 {
-  background-color: #111827;
+  background-image: none;
+  background-color: #0d111c;
 }
 
 .section-surface-2 {
-  background-image: linear-gradient(180deg, #f7f8fd 0%, #eceffb 100%);
+  background-image: linear-gradient(180deg, #eaedf7 0%, #dde2f1 100%);
 }
 .dark .section-surface-2 {
-  background-image: linear-gradient(180deg, #171d2e 0%, #111827 100%);
+  background-image: linear-gradient(180deg, #1b2233 0%, #161c2b 100%);
 }

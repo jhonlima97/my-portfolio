@@ -6,7 +6,7 @@ export default function About() {
   const textSecondary = theme === 'dark' ? '#9ca3af' : '#4b5563';
 
   return (
-    <section id="about" className="section-surface section-surface-2" style={{ paddingTop: '120px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px', minHeight: '100vh' }}>
+    <section id="about" className="section-surface section-surface-2" style={{ paddingTop: '96px', paddingBottom: '96px', paddingLeft: '24px', paddingRight: '24px' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', alignItems: 'center' }}>
         <div style={{ position: 'relative', maxWidth: '300px', margin: '0 auto', width: '100%' }}>
           <div style={{ aspectRatio: '3/4', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.3)' }}>

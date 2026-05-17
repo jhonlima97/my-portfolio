@@ -1,15 +1,6 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// Company data
-const companies = [
-  { id: 'uss', name: 'USS', title: 'Universidad Señor de Sipán', period: 'Current' },
-  { id: 'grl', name: 'GRL', title: 'Gobierno Regional de Lambayeque', period: 'Recent' },
-  { id: 'sunarp', name: 'SUNARP', title: 'Registros Públicos ZR II', period: 'Mid-term' },
-  { id: 'usat', name: 'USAT', title: 'Época Estudiante Universitario', period: 'Past' }
-];
-
-// Sample projects (2 per company)
+// Sample projects, grouped by company internally (reused later for GitHub data)
 const projects = {
   uss: [
     { id: 1, title: 'Academic Management System', description: 'Full-featured academic management system built with React and Node.js', image: '/no-image.png' },
@@ -29,9 +20,9 @@ const projects = {
   ]
 };
 
-export default function Projects() {
-  const [activeCompany, setActiveCompany] = useState('uss');
+const allProjects = Object.values(projects).flat();
 
+export default function Projects() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,7 +39,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 section-surface section-surface-1">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 section-surface section-surface-2">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,24 +59,6 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Company filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {companies.map((company) => (
-            <button
-              key={company.id}
-              onClick={() => setActiveCompany(company.id)}
-              title={company.title}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeCompany === company.id
-                  ? 'bg-indigo-600 text-white shadow-lg transform scale-105'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
-              }`}
-            >
-              {company.name}
-            </button>
-          ))}
-        </div>
-
         {/* Projects */}
         <motion.div
           variants={containerVariants}
@@ -94,7 +67,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          {projects[activeCompany as keyof typeof projects].map((project) => (
+          {allProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
