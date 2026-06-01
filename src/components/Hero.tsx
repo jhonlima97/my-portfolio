@@ -1,41 +1,52 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+
+const WORDS = ['FULLSTACK', 'DEVELOPER'];
 
 export default function Hero() {
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
-  const words = ['FULLSTACK', 'DEVELOPER'];
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const pauseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const currentWord = words[wordIndex];
-    
+    const currentWord = WORDS[wordIndex];
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         setText(currentWord.substring(0, text.length + 1));
-        
+
         if (text.length + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), 2000);
+          pauseTimeout.current = setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
         setText(currentWord.substring(0, text.length - 1));
-        
+
         if (text.length - 1 === 0) {
           setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
+          setWordIndex((prev) => (prev + 1) % WORDS.length);
         }
       }
     }, isDeleting ? 50 : 120);
 
     return () => clearTimeout(timeout);
-  }, [text, isDeleting, wordIndex, words]);
+  }, [text, isDeleting, wordIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 600);
     return () => clearInterval(interval);
+  }, []);
+
+  // El setTimeout de la pausa de 2s sobrevive a los re-render (lo necesita el
+  // typing para disparar el borrado). Solo lo limpiamos al desmontar para no
+  // dejar un timer huerfano.
+  useEffect(() => {
+    return () => {
+      if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
+    };
   }, []);
 
   return (
@@ -63,13 +74,13 @@ export default function Hero() {
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6">
             <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-purple-400 to-pink-400">
-              HI, I'M 
+              HI, I'M
             </span>
             <div className="inline-block relative">
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-purple-400 to-pink-400">
                 {text}
               </span>
-              <motion.span 
+              <motion.span
                 animate={{ opacity: showCursor ? 0.7 : 0 }}
                 transition={{ duration: 0.3 }}
                 className="inline-block w-0.5 h-[0.7em] bg-purple-400 ml-1 align-middle rounded-full"
@@ -82,7 +93,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           I craft digital experiences through innovative web solutions, combining technical expertise with creative design.
         </motion.p>
@@ -106,7 +117,7 @@ export default function Hero() {
             Contact Me
           </a>
         </motion.div>
-        
+
       </div>
 
       <motion.div

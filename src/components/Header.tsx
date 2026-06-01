@@ -79,7 +79,10 @@ export default function Header() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <ThemeToggle />
               <button
+                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
                 style={{
                   padding: '8px',
                   border: 'none',
@@ -91,11 +94,11 @@ export default function Header() {
                 }}
               >
                 {isMenuOpen ? (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={toggleColor} strokeWidth="2">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={toggleColor} strokeWidth="2" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 ) : (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={toggleColor} strokeWidth="2">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={toggleColor} strokeWidth="2" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 )}

@@ -50,6 +50,7 @@ export default function About() {
             <a
               href="/CV.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 padding: '12px 24px',
                 borderRadius: '9999px',
