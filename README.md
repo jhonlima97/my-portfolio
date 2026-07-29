@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Jhon Lima — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal single-page portfolio. Live sections: Hero, About, Experience, Projects (auto-generated from my GitHub repos), and Contact.
 
-Currently, two official plugins are available:
+**Stack:** React 19 · TypeScript · Vite 8 · Tailwind CSS v4 · Framer Motion · EmailJS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Features:**
 
-## React Compiler
+- Dark/light theme with no-FOUC inline script and `prefers-color-scheme` support.
+- English/Spanish toggle (custom typed i18n context, zero dependencies).
+- Projects fed by a build-time script that pulls my repos from the GitHub API, including top-3 languages per repo.
+- Contact form via EmailJS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the ESLint configuration
+| Command                | Description                                              |
+| ---------------------- | -------------------------------------------------------- |
+| `npm run dev`          | Vite dev server with HMR                                 |
+| `npm run build`        | Type-check (`tsc -b`) + production build                 |
+| `npm run lint`         | ESLint                                                   |
+| `npm run preview`      | Serve the production build                               |
+| `npm run fetch:github` | Regenerate `src/data/github-repos.json` from GitHub API  |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Environment variables (`.env`, not committed)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+VITE_EMAILJS_SERVICE_ID=...
+VITE_EMAILJS_TEMPLATE_ID=...
+VITE_EMAILJS_PUBLIC_KEY=...
+GITHUB_TOKEN=...   # read-only, used only by scripts/fetch-github.mjs (never shipped to the client)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deploy (GitHub Pages)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site
+and publishes it to <https://jhonlima97.github.io/my-portfolio/>.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+One-time setup in the repo:
+
+1. **Settings → Pages → Source: GitHub Actions.**
+2. **Settings → Secrets and variables → Actions**, add three repository secrets:
+   `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`.
+   Vite inlines them at build time, so without them the contact form fails silently.
+
+`vite.config.ts` sets `base: '/my-portfolio/'` to match the repo name. Anything in
+`public/` must therefore be referenced with `import.meta.env.BASE_URL`, never with a
+bare leading `/`. If the site ever moves to a custom domain, set `base` back to `'/'`.
+
+## Contact
+
+- LinkedIn: [ingjhonlima20](https://www.linkedin.com/in/ingjhonlima20/)
+- Blog: [jsmithfsdeveloper.blogspot.com](https://jsmithfsdeveloper.blogspot.com/)
+- Email: jhonw.lima08@gmail.com

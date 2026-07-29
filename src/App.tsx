@@ -1,4 +1,5 @@
 import { ThemeProvider } from './context/ThemeProvider';
+import { LanguageProvider } from './context/LanguageProvider';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -10,6 +11,7 @@ import Contact from './components/Contact';
 export default function App() {
   return (
     <ThemeProvider>
+      <LanguageProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Header />
         <main>
@@ -21,6 +23,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

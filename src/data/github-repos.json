@@ -1,0 +1,285 @@
+[
+  {
+    "nombre": "monitoreo_pagos_uss",
+    "link": "https://github.com/jhonlima97/monitoreo_pagos_uss.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "CSS",
+      "JavaScript",
+      "C#"
+    ],
+    "anioCreacion": 2026
+  },
+  {
+    "nombre": "API_NAS",
+    "link": "https://github.com/jhonlima97/API_NAS.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "C#"
+    ],
+    "anioCreacion": 2026
+  },
+  {
+    "nombre": "plataforma-psi",
+    "link": "https://github.com/jhonlima97/plataforma-psi.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "JavaScript",
+      "Handlebars",
+      "CSS"
+    ],
+    "anioCreacion": 2026
+  },
+  {
+    "nombre": "sisunlock",
+    "link": "https://github.com/jhonlima97/sisunlock.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "CSS",
+      "Handlebars",
+      "JavaScript"
+    ],
+    "anioCreacion": 2026
+  },
+  {
+    "nombre": "75_BIPAY",
+    "link": "https://github.com/jhonlima97/75_BIPAY.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "C#"
+    ],
+    "anioCreacion": 2026
+  },
+  {
+    "nombre": "portal-peru",
+    "link": "https://github.com/jhonlima97/portal-peru.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "Vue",
+      "JavaScript",
+      "CSS"
+    ],
+    "anioCreacion": 2025
+  },
+  {
+    "nombre": "api-ministros",
+    "link": "https://github.com/jhonlima97/api-ministros.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "TypeScript"
+    ],
+    "anioCreacion": 2025
+  },
+  {
+    "nombre": "landing-page",
+    "link": "https://github.com/jhonlima97/landing-page.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "HTML",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "observatorio-violencia-grl",
+    "link": "https://github.com/jhonlima97/observatorio-violencia-grl.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Vue",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "anioCreacion": 2025
+  },
+  {
+    "nombre": "pdf-to-img",
+    "link": "https://github.com/jhonlima97/pdf-to-img.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Python"
+    ],
+    "anioCreacion": 2025
+  },
+  {
+    "nombre": "BuscadorJS",
+    "link": "https://github.com/jhonlima97/BuscadorJS.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "CSS",
+      "HTML",
+      "JavaScript"
+    ],
+    "anioCreacion": 2023
+  },
+  {
+    "nombre": "chat-whatsapp-novia",
+    "link": "https://github.com/jhonlima97/chat-whatsapp-novia.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Jupyter Notebook",
+      "Python"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "sisco",
+    "link": "https://github.com/jhonlima97/sisco.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "apirestfull-drf",
+    "link": "https://github.com/jhonlima97/apirestfull-drf.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Python"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "IG-data-analysis",
+    "link": "https://github.com/jhonlima97/IG-data-analysis.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Jupyter Notebook"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "sis-inventory-HBL",
+    "link": "https://github.com/jhonlima97/sis-inventory-HBL.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "PHP",
+      "JavaScript",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "apiazure",
+    "link": "https://github.com/jhonlima97/apiazure.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "PHP"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "consumir-api-pokemon",
+    "link": "https://github.com/jhonlima97/consumir-api-pokemon.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "TypeScript",
+      "HTML",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "consumir-api-movies",
+    "link": "https://github.com/jhonlima97/consumir-api-movies.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "TypeScript",
+      "HTML",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "Api_With_SpringBoot",
+    "link": "https://github.com/jhonlima97/Api_With_SpringBoot.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Java"
+    ],
+    "anioCreacion": 2023
+  },
+  {
+    "nombre": "Api_With_Flask",
+    "link": "https://github.com/jhonlima97/Api_With_Flask.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Python"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "Api_With_Django",
+    "link": "https://github.com/jhonlima97/Api_With_Django.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "Python"
+    ],
+    "anioCreacion": 2023
+  },
+  {
+    "nombre": "Api_With_Php",
+    "link": "https://github.com/jhonlima97/Api_With_Php.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "PHP"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "calculator-with-angular",
+    "link": "https://github.com/jhonlima97/calculator-with-angular.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "TypeScript",
+      "HTML",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "Api_With_Nodejs",
+    "link": "https://github.com/jhonlima97/Api_With_Nodejs.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "JavaScript",
+      "Dockerfile"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "BackFront",
+    "link": "https://github.com/jhonlima97/BackFront.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "TypeScript",
+      "HTML",
+      "JavaScript"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "calculadora",
+    "link": "https://github.com/jhonlima97/calculadora.git",
+    "tipo": "Public",
+    "lenguajes": [
+      "HTML",
+      "CSS"
+    ],
+    "anioCreacion": 2024
+  },
+  {
+    "nombre": "script-love",
+    "link": "https://github.com/jhonlima97/script-love.git",
+    "tipo": "Private",
+    "lenguajes": [
+      "CSS",
+      "HTML",
+      "JavaScript"
+    ],
+    "anioCreacion": 2024
+  }
+]

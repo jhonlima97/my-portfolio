@@ -1,0 +1,203 @@
+// All UI strings, per language. `en` defines the shape; `es` must match it
+// (TypeScript errors if a key is missing). Add new strings here, never inline.
+
+export const en = {
+  nav: {
+    home: 'Home',
+    about: 'About Me',
+    experience: 'Experience',
+    projects: 'Projects',
+    contact: 'Contact Me',
+  },
+  hero: {
+    greeting: "HI, I'M",
+    words: ['FULLSTACK', 'DEVELOPER'],
+    subtitle:
+      'I craft digital experiences through innovative web solutions, combining technical expertise with creative design.',
+    viewWork: 'View My Work',
+    contactMe: 'Contact Me',
+    scrollDown: 'Scroll to about section',
+  },
+  about: {
+    badge: 'ABOUT ME',
+    role: 'Full Stack Developer',
+    bio: 'Passionate Full Stack Developer with experience building modern web applications. I love creating performant, accessible, and beautiful digital experiences that solve real-world problems.',
+    hireMe: 'Hire Me',
+    downloadCV: 'Download CV',
+  },
+  experience: {
+    badge: 'Experience',
+    title: 'Companies I Have Worked With',
+    subtitle: 'My professional journey, from the first to the current one',
+    /** End of the range for the position I currently hold. */
+    present: 'Present',
+    roles: {
+      mpch: 'Pre-Professional Intern',
+      sunarp: 'Professional Intern',
+      grl: 'Process Documentation Specialist',
+      uss: 'Analyst Developer',
+    },
+  },
+  projects: {
+    badge: 'Portfolio',
+    title: 'My Projects',
+    subtitle: 'Discover my work across different organizations',
+    viewProject: 'View Code',
+    viewDemo: 'View Demo',
+    badgePublic: 'Public',
+    badgePrivate: 'Private',
+    privateRepo: 'Restricted access',
+    privateRepoAria: 'Private repository — no public access',
+    description: (year: number) => `Project created in ${year}.`,
+    categories: {
+      web: 'Web app',
+      api: 'REST API',
+      service: 'Service',
+      system: 'Internal system',
+      mobile: 'Mobile app',
+      data: 'Data dashboard',
+    },
+  },
+  contact: {
+    badge: 'Contact',
+    title: 'Get In Touch',
+    subtitle: "Have a project in mind? Let's talk!",
+    name: 'Name',
+    namePlaceholder: 'Your name',
+    email: 'Email',
+    emailPlaceholder: 'your@email.com',
+    subject: 'Subject',
+    subjectPlaceholder: 'Message subject',
+    message: 'Message',
+    messagePlaceholder: 'Write your message...',
+    send: 'Send Message',
+    sending: 'Sending...',
+    sent: 'Message Sent!',
+    success: 'Thank you! Your message has been sent.',
+    error: 'Failed to send message. Please try again.',
+    infoTitle: 'Contact Information',
+    infoText:
+      "I'm always interested in new opportunities and challenging projects. Feel free to reach out.",
+    emailLabel: 'Email',
+    phoneLabel: 'Phone',
+    locationLabel: 'Location',
+    followMe: 'Follow Me',
+  },
+  footer: {
+    rights: 'All Rights Reserved.',
+  },
+  social: {
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    x: 'X (Twitter)',
+    blog: 'Blog',
+  },
+  a11y: {
+    switchLanguage: 'Cambiar a español',
+    menu: 'Navigation menu',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+  },
+};
+
+export type Translations = typeof en;
+
+export const es: Translations = {
+  nav: {
+    home: 'Inicio',
+    about: 'Sobre mí',
+    experience: 'Experiencia',
+    projects: 'Proyectos',
+    contact: 'Contáctame',
+  },
+  hero: {
+    greeting: 'HOLA, SOY',
+    words: ['DESARROLLADOR', 'FULLSTACK'],
+    subtitle:
+      'Creo experiencias digitales a través de soluciones web innovadoras, combinando experiencia técnica con diseño creativo.',
+    viewWork: 'Ver mi trabajo',
+    contactMe: 'Contáctame',
+    scrollDown: 'Ir a la sección sobre mí',
+  },
+  about: {
+    badge: 'SOBRE MÍ',
+    role: 'Desarrollador Full Stack',
+    bio: 'Desarrollador Full Stack apasionado, con experiencia construyendo aplicaciones web modernas. Me encanta crear experiencias digitales rápidas, accesibles y atractivas que resuelven problemas reales.',
+    hireMe: 'Contrátame',
+    downloadCV: 'Descargar CV',
+  },
+  experience: {
+    badge: 'Experiencia',
+    title: 'Empresas en las que he trabajado',
+    subtitle: 'Mi trayectoria profesional, de la primera a la actual',
+    present: 'Actualidad',
+    roles: {
+      mpch: 'Practicante Pre Profesional',
+      sunarp: 'Practicante Profesional',
+      grl: 'Documentador de procesos',
+      uss: 'Analista Desarrollador',
+    },
+  },
+  projects: {
+    badge: 'Portafolio',
+    title: 'Mis Proyectos',
+    subtitle: 'Descubre mi trabajo en distintas organizaciones',
+    viewProject: 'Ver código',
+    viewDemo: 'Ver demo',
+    badgePublic: 'Público',
+    badgePrivate: 'Privado',
+    privateRepo: 'Acceso restringido',
+    privateRepoAria: 'Repositorio privado — sin acceso público',
+    description: (year: number) => `Proyecto creado en ${year}.`,
+    categories: {
+      web: 'Aplicación web',
+      api: 'API REST',
+      service: 'Servicio',
+      system: 'Sistema interno',
+      mobile: 'App móvil',
+      data: 'Dashboard de datos',
+    },
+  },
+  contact: {
+    badge: 'Contacto',
+    title: 'Hablemos',
+    subtitle: '¿Tienes un proyecto en mente? ¡Conversemos!',
+    name: 'Nombre',
+    namePlaceholder: 'Tu nombre',
+    email: 'Correo',
+    emailPlaceholder: 'tu@correo.com',
+    subject: 'Asunto',
+    subjectPlaceholder: 'Asunto del mensaje',
+    message: 'Mensaje',
+    messagePlaceholder: 'Escribe tu mensaje...',
+    send: 'Enviar mensaje',
+    sending: 'Enviando...',
+    sent: '¡Mensaje enviado!',
+    success: '¡Gracias! Tu mensaje ha sido enviado.',
+    error: 'No se pudo enviar el mensaje. Inténtalo de nuevo.',
+    infoTitle: 'Información de contacto',
+    infoText:
+      'Siempre estoy interesado en nuevas oportunidades y proyectos desafiantes. No dudes en escribirme.',
+    emailLabel: 'Correo',
+    phoneLabel: 'Teléfono',
+    locationLabel: 'Ubicación',
+    followMe: 'Sígueme',
+  },
+  footer: {
+    rights: 'Todos los derechos reservados.',
+  },
+  social: {
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    x: 'X (Twitter)',
+    blog: 'Blog',
+  },
+  a11y: {
+    switchLanguage: 'Switch to English',
+    menu: 'Menú de navegación',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+  },
+};
+
+export const translations = { en, es } as const;

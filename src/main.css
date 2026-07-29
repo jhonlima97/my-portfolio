@@ -15,12 +15,21 @@
   }
 }
 
-* {
+html {
   scroll-behavior: smooth;
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
-html {
-  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+/* The header is fixed (64px tall), so anchor targets must offset by it or
+   the first 64px of each section land underneath it. */
+section[id] {
+  scroll-margin-top: 64px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

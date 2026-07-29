@@ -1,43 +1,41 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 interface Company {
-  id: string;
+  id: 'mpch' | 'sunarp' | 'grl' | 'uss'; // keys into t.experience.roles
   short: string;
   name: string;
+  /** Closed range ('2022 – 2023'). For the current job, just the start year:
+   *  the "– Present" part is appended in the active language at render time. */
   period: string;
-  role: string;
   current?: boolean;
 }
 
-// Chronological: oldest -> current. Edit periods/roles here only.
+// Chronological: oldest -> current. Roles live in src/i18n/translations.ts.
 const companies: Company[] = [
   {
     id: 'mpch',
     short: 'MPCH',
     name: 'Municipalidad Provincial de Chiclayo',
     period: '2022 – 2023',
-    role: 'Practicante Pre Profesional',
   },
   {
     id: 'sunarp',
     short: 'SUNARP',
     name: 'Registros Públicos · Zona Registral II',
     period: '2023 – 2024',
-    role: 'Practicante Profesional',
   },
   {
     id: 'grl',
     short: 'GRL',
     name: 'Gobierno Regional de Lambayeque',
     period: '2025',
-    role: 'Documentador de procesos',
   },
   {
     id: 'uss',
     short: 'USS',
     name: 'Universidad Señor de Sipán',
-    period: '2026 – Present',
-    role: 'Analista Desarrollador',
+    period: '2026',
     current: true,
   },
 ];
@@ -53,6 +51,8 @@ const item = {
 };
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="experience"
@@ -67,13 +67,13 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300">
-            Experiencia
+            {t.experience.badge}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Empresas en las que he trabajado
+            {t.experience.title}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Mi trayectoria profesional, de la primera a la actual
+            {t.experience.subtitle}
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ export default function Experience() {
               {/* Card */}
               <div className="md:mt-6 md:text-center">
                 <span className="inline-block text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-1">
-                  {c.period}
+                  {c.current ? `${c.period} – ${t.experience.present}` : c.period}
                 </span>
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                   {c.short}
@@ -125,7 +125,7 @@ export default function Experience() {
                   {c.name}
                 </p>
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  {c.role}
+                  {t.experience.roles[c.id]}
                 </p>
               </div>
             </motion.li>
